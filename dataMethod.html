@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue3 Demo</title>
+    <script src="https://unpkg.com/vue@next">//采用CDN方式引入Vue3</script>
+</head>
+<body>
+    <div style="text-align: center;" id="Application">
+        <h1>{{type}}</h1>
+        <button v-on:click="add">点击</button>
+    </div>
+    <script>
+        //定义组件
+        const App = {
+            data(){
+                return{
+                    count : 0,
+                }
+            },
+            computed: {
+                type(){
+                    return this.count > 10 ? "大":"小"
+                }
+            },
+            methods: {
+                add() {
+                    this.count++
+                }
+            }
+        }
+        //创建组件并获取组件实例
+        let instance = Vue.createApp(App).mount("#Application")
+        console.log(instance.type)
+    </script>
+</body>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue3 Demo</title>
+    <script src="https://unpkg.com/vue@next">//采用CDN方式引入Vue3</script>
+</head>
+<body>
+    <div id="Application">
+        <input v-model="textField"/>
+        <p>文本框输入内容:{{textField}}</p>
+    </div>
+    <script>
+        const App = {
+            data() {
+                return {
+                    textField:""
+                }
+            }
+        }
+        Vue.createApp(App).mount("#Application")
+    </script>
+</body>
+</html>
